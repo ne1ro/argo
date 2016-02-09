@@ -1,0 +1,31 @@
+{
+  "name": "argo",
+  "version": "0.0.1",
+  "description": "Argo website frontend",
+  "main": "app/assets/javascripts/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ne1ro/argo.git"
+  },
+  "keywords": [
+    "website",
+    "frontend"
+  ],
+  "private": true,
+  "author": "Alexey Kuznetsov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ne1ro/argo/issues"
+  },
+  "homepage": "https://github.com/ne1ro/argo#readme",
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.1",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^5.0.0",
+    "eslint-plugin-react": "^3.16.1",
+    "ramda": "^0.19.1",
+    "react": "^0.14.7",
+    "webpack": "^1.12.13"
+  }
+}
