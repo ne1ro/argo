@@ -20,6 +20,9 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model-errors_details (1.3.0)
+      activemodel (>= 3.2.13, < 5.0.0.beta1)
+      activesupport
     activejob (4.2.5.1)
       activesupport (= 4.2.5.1)
       globalid (>= 0.3.0)
@@ -36,9 +39,12 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.5.0)
+      activerecord (>= 3.2, < 5)
     addressable (2.4.0)
     arel (6.0.3)
     ast (2.2.0)
+    awesome_print (1.6.1)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -46,6 +52,18 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    brakeman (3.1.5)
+      erubis (~> 2.6)
+      fastercsv (~> 1.5)
+      haml (>= 3.0, < 5.0)
+      highline (>= 1.6.20, < 2.0)
+      multi_json (~> 1.2)
+      ruby2ruby (>= 2.1.1, < 2.3.0)
+      ruby_parser (~> 3.7.0)
+      safe_yaml (>= 1.0)
+      sass (~> 3.0)
+      slim (>= 1.3.6, < 4.0)
+      terminal-table (~> 1.4)
     builder (3.2.2)
     byebug (8.2.2)
     capistrano (3.0.1)
@@ -60,9 +78,12 @@ GEM
       capistrano-bundler (>= 1.0.0)
     capistrano-rails-console (0.5.2)
       capistrano (>= 3.0.0, < 4.0.0)
-    capistrano-rvm (0.1.2)
+    capistrano-rbenv (2.0.1)
       capistrano (~> 3.0)
-      sshkit (~> 1.2)
+      sshkit (~> 1.3)
+    capistrano3-puma (1.2.1)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     capybara (2.6.2)
       addressable
       mime-types (>= 1.16)
@@ -70,6 +91,15 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    carrierwave-bombshelter (0.1.1.5)
+      activesupport (>= 3.2.0)
+      carrierwave
+      fastimage
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
@@ -80,6 +110,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    colorize (0.7.7)
     concurrent-ruby (1.0.0)
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
@@ -92,19 +123,38 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (0.12.1)
     diff-lcs (1.2.5)
+    docile (1.1.5)
+    elasticsearch (1.0.15)
+      elasticsearch-api (= 1.0.15)
+      elasticsearch-transport (= 1.0.15)
+    elasticsearch-api (1.0.15)
+      multi_json
+    elasticsearch-model (0.1.8)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.8)
+    elasticsearch-transport (1.0.15)
+      faraday
+      multi_json
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
+    eventmachine (1.0.9.1)
     execjs (2.6.0)
-    factory_girl (4.5.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.6.0)
-      factory_girl (~> 4.5.0)
-      railties (>= 3.0.0)
-    faker (1.6.1)
-      i18n (~> 0.5)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    fastercsv (1.5.5)
+    fastimage (1.8.1)
+      addressable (~> 2.3, >= 2.3.5)
     ffi (1.9.10)
     figaro (1.1.1)
       thor (~> 0.14)
     formatador (0.2.5)
+    fuubar (2.0.0)
+      rspec (~> 3.0)
+      ruby-progressbar (~> 1.4)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     guard (2.13.0)
@@ -116,11 +166,19 @@ GEM
       pry (>= 0.9.12)
       shellany (~> 0.0)
       thor (>= 0.18.1)
+    guard-brakeman (0.8.3)
+      brakeman (>= 2.1.1)
+      guard (>= 2.0.0)
     guard-bundler (2.1.0)
       bundler (~> 1.0)
       guard (~> 2.2)
       guard-compat (~> 1.1)
     guard-compat (1.2.1)
+    guard-livereload (2.5.2)
+      em-websocket (~> 0.5)
+      guard (~> 2.8)
+      guard-compat (~> 1.0)
+      multi_json (~> 1.8)
     guard-rails (0.7.2)
       guard (~> 2.11)
       guard-compat (~> 1.0)
@@ -128,7 +186,18 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    guard-rubocop (1.2.0)
+      guard (~> 2.0)
+      rubocop (~> 0.20)
+    haml (4.0.7)
+      tilt
+    has_scope (0.7.0)
+      actionpack (>= 4.1, < 5.1)
+      activesupport (>= 4.1, < 5.1)
+    hashie (3.4.3)
     high_voltage (2.4.0)
+    highline (1.7.8)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     interception (0.5)
     jbuilder (2.4.1)
@@ -139,8 +208,13 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -151,9 +225,12 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.99)
+    mini_magick (4.4.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mixlib-cli (1.5.0)
     multi_json (1.11.2)
+    multipart-post (2.0.0)
     nenv (0.3.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -164,7 +241,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    parser (2.3.0.3)
+    parser (2.3.0.4)
       ast (~> 2.2)
     pg (0.18.4)
     powerpack (0.1.1)
@@ -172,6 +249,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-bloodline (0.0.2)
+      colorize (~> 0.7)
+      pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     pry-rescue (1.4.2)
@@ -183,6 +263,7 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    railroady (1.4.2)
     rails (4.2.5.1)
       actionmailer (= 4.2.5.1)
       actionpack (= 4.2.5.1)
@@ -215,6 +296,8 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    recaptcha (1.1.0)
+      json
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
     rspec (3.4.0)
@@ -238,14 +321,24 @@ GEM
       rspec-mocks (~> 3.4.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
-    rubocop (0.37.0)
-      parser (>= 2.3.0.2, < 3.0)
+    rubocop (0.37.1)
+      parser (>= 2.3.0.4, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 0.3)
     ruby-progressbar (1.7.5)
+    ruby2ruby (2.2.0)
+      ruby_parser (~> 3.1)
+      sexp_processor (~> 4.0)
+    ruby_parser (3.7.3)
+      sexp_processor (~> 4.1)
     rubyzip (1.1.7)
+    safe_yaml (1.0.4)
+    sandi_meter (1.2.0)
+      json
+      launchy
+      mixlib-cli
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -258,10 +351,18 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
+    sexp_processor (4.6.1)
     shellany (0.0.1)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    simplecov (0.11.2)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -286,6 +387,9 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     temple (0.7.6)
+    terminal-notifier (1.6.3)
+    terminal-notifier-guard (1.6.4)
+    terminal-table (1.5.2)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -312,44 +416,67 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model-errors_details
+  acts-as-taggable-on (~> 3.4)
+  awesome_print
   better_errors
+  binding_of_caller
   byebug
   capistrano (~> 3.0.1)
   capistrano-bundler
   capistrano-rails (~> 1.1.0)
   capistrano-rails-console
-  capistrano-rvm (~> 0.1.1)
+  capistrano-rbenv
+  capistrano3-puma
   capybara
+  carrierwave
+  carrierwave-bombshelter
   database_cleaner
   devise
   devise-i18n
-  factory_girl_rails
-  faker
+  elasticsearch-model
+  elasticsearch-rails
   figaro
+  fuubar
+  guard
+  guard-brakeman
   guard-bundler
+  guard-livereload (~> 2.4)
   guard-rails
   guard-rspec
+  guard-rubocop
+  has_scope
   high_voltage
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   launchy
+  letter_opener
+  mini_magick
   pg
+  pry-bloodline
   pry-rails
   pry-rescue
   puma
   quiet_assets
+  railroady
   rails (= 4.2.5.1)
   rails_layout
   rb-fchange
   rb-fsevent
+  recaptcha
   rspec-rails
-  rubocop
+  sandi_meter
   sass-rails (~> 5.0)
   selenium-webdriver
+  shoulda-matchers
   simple_form
+  simplecov
   slim-rails
   spring
   spring-commands-rspec
+  terminal-notifier
+  terminal-notifier-guard
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
