@@ -15,7 +15,6 @@ gem 'high_voltage'
 gem 'pg'
 gem 'puma'
 gem 'simple_form'
-gem 'slim-rails'
 
 group :development do
   gem 'web-console', '~> 2.0'
