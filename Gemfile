@@ -5,15 +5,12 @@ ruby '2.3.0'
 gem 'rails', '4.2.5.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'devise'
+gem 'devise' # Auth
 gem 'devise-i18n'
-gem 'figaro'
-gem 'high_voltage'
-gem 'pg'
-gem 'puma'
+gem 'figaro' # Configuration
+gem 'high_voltage' # Static pages
+gem 'pg' # PostgreSQL
+gem 'puma' # Web server
 gem 'simple_form'
 gem 'kaminari' # Pagination
 gem 'carrierwave' # Files upload
@@ -27,10 +24,9 @@ gem 'elasticsearch-model'
 gem 'recaptcha', require: 'recaptcha/rails' # Captcha support
 
 group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'better_errors'
-  gem 'quiet_assets'
-  gem 'rails_layout'
+  gem 'web-console', '~> 2.0' # Web console
+  gem 'better_errors' # Better errors page
+  gem 'quiet_assets' # Less assets noise
   gem 'rb-fsevent', require: false # Cocoa API events
   gem 'rb-fchange', require: false
   gem 'spring-commands-rspec' # Tests preloader
