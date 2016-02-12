@@ -51,7 +51,8 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'guard-brakeman'
-  gem 'guard-livereload', '~> 2.4', require: false
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'guard-webpack'
 end
 
 group :development, :test do

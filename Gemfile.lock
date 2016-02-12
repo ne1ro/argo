@@ -182,6 +182,8 @@ GEM
     guard-rubocop (1.2.0)
       guard (~> 2.0)
       rubocop (~> 0.20)
+    guard-webpack (0.1.2)
+      guard (< 3.0)
     haml (4.0.7)
       tilt
     has_scope (0.7.0)
@@ -227,7 +229,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    parser (2.3.0.4)
+    parser (2.3.0.5)
       ast (~> 2.2)
     pg (0.18.4)
     powerpack (0.1.1)
@@ -306,7 +308,7 @@ GEM
       rspec-mocks (~> 3.4.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
-    rubocop (0.37.1)
+    rubocop (0.37.2)
       parser (>= 2.3.0.4, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
@@ -418,10 +420,11 @@ DEPENDENCIES
   guard
   guard-brakeman
   guard-bundler
-  guard-livereload (~> 2.4)
+  guard-livereload (~> 2.5)
   guard-rails
   guard-rspec
   guard-rubocop
+  guard-webpack
   has_scope
   high_voltage
   kaminari
