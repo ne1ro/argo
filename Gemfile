@@ -35,6 +35,7 @@ group :development do
   gem 'binding_of_caller' # Retrieve the binding of a method's caller
   gem 'sandi_meter' # Clean code check
   gem 'letter_opener' # Preview letters
+  gem 'bullet' # Prevent N+1 queries
 
   # Deploy
   gem 'capistrano', '~> 3.0.1'

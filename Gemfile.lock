@@ -65,6 +65,9 @@ GEM
       slim (>= 1.3.6, < 4.0)
       terminal-table (~> 1.4)
     builder (3.2.2)
+    bullet (5.0.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.9.0)
     byebug (8.2.2)
     capistrano (3.0.1)
       i18n
@@ -380,6 +383,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode-display_width (0.3.1)
+    uniform_notifier (1.9.0)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -400,6 +404,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  bullet
   byebug
   capistrano (~> 3.0.1)
   capistrano-bundler
