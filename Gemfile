@@ -2,16 +2,13 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
+# Backend
 gem 'rails', '4.2.5.1'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
 gem 'devise' # Auth
 gem 'devise-i18n'
 gem 'figaro' # Configuration
-gem 'high_voltage' # Static pages
 gem 'pg' # PostgreSQL
 gem 'puma' # Web server
-gem 'simple_form'
 gem 'kaminari' # Pagination
 gem 'carrierwave' # Files upload
 gem 'carrierwave-bombshelter' # PNG bomb protect
@@ -22,6 +19,15 @@ gem 'has_scope' # Map incoming controller parameters to named scopes
 gem 'elasticsearch-rails' # ElasticSearch support
 gem 'elasticsearch-model'
 gem 'recaptcha', require: 'recaptcha/rails' # Captcha support
+
+# Frontend
+gem 'sass-rails', '~> 5.0' # SCSS
+gem 'uglifier', '>= 1.3.0' # Minify assets
+gem 'high_voltage' # Static pages
+gem 'simple_form' # Form helpers
+gem 'compass' # SCSS framework
+gem 'susy' # Grid framework
+gem 'autoprefixer-rails' # Vendor prefixes
 
 group :development do
   gem 'web-console', '~> 2.0' # Web console
@@ -36,6 +42,7 @@ group :development do
   gem 'sandi_meter' # Clean code check
   gem 'letter_opener' # Preview letters
   gem 'bullet' # Prevent N+1 queries
+  gem 'scss_lint', require: false # Check SCSS code style
 
   # Deploy
   gem 'capistrano', '~> 3.0.1'
