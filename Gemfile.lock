@@ -44,7 +44,7 @@ GEM
     addressable (2.4.0)
     arel (6.0.3)
     ast (2.2.0)
-    autoprefixer-rails (6.3.2)
+    autoprefixer-rails (6.3.3)
       execjs
       json
     awesome_print (1.6.1)
@@ -248,7 +248,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    parser (2.3.0.5)
+    parser (2.3.0.6)
       ast (~> 2.2)
     pg (0.18.4)
     powerpack (0.1.1)
