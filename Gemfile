@@ -20,14 +20,8 @@ gem 'elasticsearch-rails' # ElasticSearch support
 gem 'elasticsearch-model'
 gem 'recaptcha', require: 'recaptcha/rails' # Captcha support
 
-# Frontend
-gem 'sass-rails', '~> 5.0' # SCSS
-gem 'uglifier', '>= 1.3.0' # Minify assets
 gem 'high_voltage' # Static pages
 gem 'simple_form' # Form helpers
-gem 'compass' # SCSS framework
-gem 'susy' # Grid framework
-gem 'autoprefixer-rails' # Vendor prefixes
 
 group :development do
   gem 'web-console', '~> 2.0' # Web console
