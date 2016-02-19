@@ -1,0 +1,22 @@
+{
+  "name": "argo",
+  "description": "Argo website frontend",
+  "main": "app/assets/javascripts/index.js",
+  "authors": [
+    "Alexey Kuznetsov"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "website",
+    "frontend"
+  ],
+  "homepage": "https://github.com/ne1ro/argo",
+  "moduleType": [],
+  "private": true,
+  "dependencies": {
+    "susy": "^2.2.12",
+    "compass-breakpoint": "breakpoint-sass#^2.6.1",
+    "compass-sass-mixins": "*",
+    "font-awesome": "^4.5.0"
+  }
+}

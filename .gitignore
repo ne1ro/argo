@@ -122,3 +122,6 @@ npm-debug.log
 
 # Bundled javascript
 app/assets/javascripts/bundle.js
+
+# Bower components
+bower_components
