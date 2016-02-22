@@ -59,6 +59,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails' # Test framework
+  gem 'mutant-rspec' # Mutation testing
   gem 'byebug' # Debugger
   gem 'spring' # App preloader
   gem 'fuubar' # RSpec progress bar formatter
