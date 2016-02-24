@@ -71,10 +71,12 @@ group :development, :test do
 end
 
 group :test do
+  gem 'factory_girl' # Test factories
+  gem 'faker' # Fake data
   gem 'launchy' # Launch tests
   gem 'database_cleaner' # Clean test DB
   gem 'simplecov', require: false # Tests coverage
-  gem 'shoulda-matchers', require: false # RSpec-compatible one-liners
+  gem 'shoulda-matchers', '~> 3.1' # RSpec-compatible one-liners
   gem 'capybara' # Integration testing
   gem 'selenium-webdriver' # Automating website tests
 end
