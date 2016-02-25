@@ -6,5 +6,6 @@ AllCops:
    - 'bin/*'
    - 'db/**/*'
    - 'vendor/bundle/**/*'
+   - 'node_modules/**/*'
 Rails:
   Enabled: true
