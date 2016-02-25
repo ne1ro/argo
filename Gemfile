@@ -38,14 +38,6 @@ group :development do
   gem 'bullet' # Prevent N+1 queries
   gem 'scss_lint', require: false # Check SCSS code style
 
-  # Deploy
-  gem 'capistrano', '~> 3.0.1'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.1.0'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rbenv'
-  gem 'capistrano3-puma'
-
   # Continious integration
   gem 'guard'
   gem 'guard-bundler'
