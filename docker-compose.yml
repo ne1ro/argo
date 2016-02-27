@@ -1,0 +1,28 @@
+db:
+  image: kiasaki/alpine-postgres
+  ports:
+    - "5432"
+
+
+search:
+  image: elasticsearch:2.2
+  links:
+    - db
+  ports:
+    - "9200"
+    - "9300"
+
+
+web:
+  build: .
+  links:
+    - db
+    - search
+
+
+nginx:
+  image: nginx:1.9
+  ports:
+    - '80'
+  links:
+    - web
