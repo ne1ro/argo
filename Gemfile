@@ -5,7 +5,7 @@ ruby '2.3.0'
 # Backend
 gem 'rails', '4.2.5.1'
 gem 'devise' # Auth
-gem 'devise-i18n'
+gem 'devise-i18n' # Devise localization
 gem 'figaro' # Configuration
 gem 'pg' # PostgreSQL
 gem 'puma' # Web server
@@ -18,7 +18,9 @@ gem 'acts-as-taggable-on', '~> 3.4' # Tags
 gem 'has_scope' # Map incoming controller parameters to named scopes
 gem 'elasticsearch-rails' # ElasticSearch support
 gem 'recaptcha', require: 'recaptcha/rails' # Captcha support
+gem 'friendly_id', '~> 5.1.0' # Slugging permalinks
 gem 'babosa' # Slug translations
+gem 'rails-i18n', '~> 4.0.0' # Localization
 
 gem 'high_voltage' # Static pages
 gem 'simple_form' # Form helpers
