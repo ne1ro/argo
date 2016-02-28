@@ -6,4 +6,6 @@ class Production < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 5 }
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :code, length: { minimum: 3 }
+
+  acts_as_taggable
 end

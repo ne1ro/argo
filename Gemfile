@@ -17,8 +17,8 @@ gem 'active_model-errors_details' # Detailed errors
 gem 'acts-as-taggable-on', '~> 3.4' # Tags
 gem 'has_scope' # Map incoming controller parameters to named scopes
 gem 'elasticsearch-rails' # ElasticSearch support
-gem 'elasticsearch-model'
 gem 'recaptcha', require: 'recaptcha/rails' # Captcha support
+gem 'babosa' # Slug translations
 
 gem 'high_voltage' # Static pages
 gem 'simple_form' # Form helpers
