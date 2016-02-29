@@ -1,4 +1,5 @@
 require 'database_cleaner'
+require 'devise'
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
@@ -70,6 +71,9 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.include FactoryGirl::Syntax::Methods
+  config.include Devise::TestHelpers, type: :controller
 end
 
 Shoulda::Matchers.configure do |config|

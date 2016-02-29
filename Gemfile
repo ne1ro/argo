@@ -62,10 +62,10 @@ group :development, :test do
   gem 'pry-bloodline' # Pry theme
   gem 'awesome_print' # Print colors
   gem 'railroady' # DB diagram
+  gem 'factory_girl_rails' # Test factories
 end
 
 group :test do
-  gem 'factory_girl' # Test factories
   gem 'faker' # Fake data
   gem 'launchy' # Launch tests
   gem 'database_cleaner' # Clean test DB
