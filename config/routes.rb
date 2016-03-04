@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: %i(registrations)
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :production_categories, only: %i(index create update destroy)
 
