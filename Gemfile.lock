@@ -54,7 +54,7 @@ GEM
     ast (2.2.0)
     awesome_print (1.6.1)
     babosa (1.0.2)
-    bcrypt (3.1.10)
+    bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -261,7 +261,7 @@ GEM
     pry-rescue (1.4.2)
       interception (>= 0.5)
       pry
-    puma (3.0.2)
+    puma (3.1.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     quiet_assets (1.1.0)

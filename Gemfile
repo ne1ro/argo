@@ -22,9 +22,11 @@ gem 'friendly_id', '~> 5.1.0' # Slugging permalinks
 gem 'babosa' # Slug translations
 gem 'rails-i18n', '~> 4.0.0' # Localization
 gem 'pundit' # Authorization
+gem 'active_model_serializers', '~> 0.10.0' # JSON generation
 
 gem 'high_voltage' # Static pages
 gem 'simple_form' # Form helpers
+gem 'sidekiq' # Background jobs
 
 group :development do
   gem 'web-console', '~> 2.0' # Web console
@@ -61,6 +63,7 @@ group :development, :test do
   gem 'pry-rails' # Rails console
   gem 'pry-rescue' # Pry helper
   gem 'pry-bloodline' # Pry theme
+  gem 'pry-byebug' # Integration of debugger in Pry
   gem 'awesome_print' # Print colors
   gem 'railroady' # DB diagram
   gem 'factory_girl_rails' # Test factories
