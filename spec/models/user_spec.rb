@@ -1,11 +1,8 @@
 describe User do
-  before(:each) { @user = User.new(email: 'user@example.com') }
+  let(:user) { create :user, admin: true }
 
-  subject { @user }
+  subject { user }
 
-  it { should respond_to(:email) }
-
-  it '#email returns a string' do
-    expect(@user.email).to match 'user@example.com'
-  end
+  it { is_expected.to respond_to(:email) }
+  it { is_expected.to validate_presence_of(:email) }
 end
