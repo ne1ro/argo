@@ -24,6 +24,10 @@ GEM
     active_model-errors_details (1.3.0)
       activemodel (>= 3.2.13, < 5.0.0.beta1)
       activesupport
+    active_model_serializers (0.10.0.rc4)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
     activejob (4.2.5.1)
       activesupport (= 4.2.5.1)
       globalid (>= 0.3.0)
@@ -100,6 +104,7 @@ GEM
       adamantium (~> 0.2.0)
       equalizer (~> 0.0.9)
     concurrent-ruby (1.0.1)
+    connection_pool (2.2.0)
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     devise (3.5.6)
@@ -256,6 +261,9 @@ GEM
     pry-bloodline (0.0.2)
       colorize (~> 0.7)
       pry (~> 0.10)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
+      pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     pry-rescue (1.4.2)
@@ -306,6 +314,7 @@ GEM
       ffi (>= 0.5.0)
     recaptcha (1.1.0)
       json
+    redis (3.2.2)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
     rspec (3.4.0)
@@ -360,6 +369,10 @@ GEM
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    sidekiq (4.1.1)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      redis (~> 3.2, >= 3.2.1)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -417,6 +430,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model-errors_details
+  active_model_serializers (~> 0.10.0.rc4)
   acts-as-taggable-on (~> 3.4)
   awesome_print
   babosa
@@ -453,6 +467,7 @@ DEPENDENCIES
   mutant-rspec
   pg
   pry-bloodline
+  pry-byebug
   pry-rails
   pry-rescue
   puma
@@ -469,6 +484,7 @@ DEPENDENCIES
   scss_lint
   selenium-webdriver
   shoulda-matchers (~> 3.1)
+  sidekiq
   simple_form
   simplecov
   spring

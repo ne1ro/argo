@@ -22,7 +22,7 @@ gem 'friendly_id', '~> 5.1.0' # Slugging permalinks
 gem 'babosa' # Slug translations
 gem 'rails-i18n', '~> 4.0.0' # Localization
 gem 'pundit' # Authorization
-gem 'active_model_serializers', '~> 0.10.0' # JSON generation
+gem 'active_model_serializers', '~> 0.10.0.rc4' # JSON generation
 
 gem 'high_voltage' # Static pages
 gem 'simple_form' # Form helpers
