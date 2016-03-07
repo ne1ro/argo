@@ -115,6 +115,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     devise-i18n (0.12.1)
+    devise-i18n-views (0.3.7)
     diff-lcs (1.2.5)
     docile (1.1.5)
     elasticsearch-rails (0.1.8)
@@ -444,6 +445,7 @@ DEPENDENCIES
   database_cleaner
   devise
   devise-i18n
+  devise-i18n-views
   elasticsearch-rails
   factory_girl_rails
   faker

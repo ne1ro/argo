@@ -1,1 +1,16 @@
 ru:
+  activerecord:
+    attributes:
+      user:
+        email: Электронная почта
+        password: Пароль
+      pages:
+        index: Главная
+        about: О нас
+        contacts: Контакты
+
+    models:
+      production: Продукция
+      production_category: Категория
+      article: Статья
+      news_item: Новость

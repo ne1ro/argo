@@ -34,7 +34,7 @@ feature 'Sign in', :devise do
   #   When I sign in with a wrong email
   #   Then I see an invalid email message
   scenario 'user cannot sign in with wrong email' do
-    user = FactoryGirl.create(:user)
+    user = FactoryGirl.create :user
     signin('invalid@email.com', user.password)
     expect(page).to have_content I18n.t(
       'devise.failure.not_found_in_database', authentication_keys: 'email')

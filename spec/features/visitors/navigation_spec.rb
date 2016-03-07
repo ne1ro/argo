@@ -12,8 +12,17 @@ feature 'Navigation links', :devise do
     visit root_path
 
     within 'nav' do
-      expect(page).to have_content 'Главная'
-      expect(page).to have_content 'Товары'
+      expect(page).to have_content I18n.t('activerecord.attributes.pages.index')
+      expect(page).to have_content \
+        I18n.t('activerecord.models.production_category')
+      expect(page).to have_content I18n.t('activerecord.models.production')
+      expect(page).to have_content I18n.t('activerecord.models.article')
+      expect(page).to have_content I18n.t('activerecord.models.news_item')
+      expect(page).to have_content I18n.t('activerecord.attributes.pages.about')
+      expect(page).to have_content \
+        I18n.t('activerecord.attributes.pages.contacts')
+      expect(page).to have_content \
+        I18n.t('activerecord.attributes.pages.contacts')
     end
   end
 end

@@ -6,6 +6,7 @@ ruby '2.3.0'
 gem 'rails', '4.2.5.1'
 gem 'devise' # Authentication
 gem 'devise-i18n' # Devise localization
+gem 'devise-i18n-views' # Devise views localization
 gem 'figaro' # Configuration
 gem 'pg' # PostgreSQL
 gem 'puma' # Web server
