@@ -13,7 +13,7 @@ feature 'Sign out', :devise do
 
     expect(page).to have_content I18n.t 'devise.sessions.signed_in'
 
-    click_link 'Sign Out'
+    click_link I18n.t('devise.shared.links.sign_out')
 
     expect(page).to have_content I18n.t 'devise.sessions.signed_out'
   end

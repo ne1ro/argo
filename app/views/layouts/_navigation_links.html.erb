@@ -6,4 +6,9 @@
   <%= link_to t('activerecord.models.news_item'), root_path %>
   <%= link_to t('activerecord.attributes.pages.about'), root_path %>
   <%= link_to t('activerecord.attributes.pages.contacts'), root_path %>
+
+  <% if current_user.try(:admin?) %>
+    <%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path,
+      method: :delete %>
+  <% end %>
 </nav>

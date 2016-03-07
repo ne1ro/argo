@@ -14,3 +14,8 @@ ru:
       production_category: Категория
       article: Статья
       news_item: Новость
+
+  devise:
+    shared:
+      links:
+        sign_out: Выйти
