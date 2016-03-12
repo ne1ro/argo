@@ -27,3 +27,12 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+# Configure guardian
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  issuer: "Argo",
+  ttl: { 30, :days },
+  verify_issuer: true, # optional
+  secret_key: "example",
+  serializer: Argo.GuardianSerializer

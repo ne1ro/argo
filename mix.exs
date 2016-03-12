@@ -37,6 +37,7 @@ defmodule Argo.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
+     {:guardian, "~> 0.10.0"},
      {:credo, "~> 0.3", only: [:dev, :test]}]
   end
 
