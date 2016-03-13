@@ -35,8 +35,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :argo, Argo.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "neiro",
+  password: "",
   database: "argo_dev",
   hostname: "localhost",
   pool_size: 10
