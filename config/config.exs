@@ -36,3 +36,6 @@ config :guardian, Guardian,
   verify_issuer: true, # optional
   secret_key: "example",
   serializer: Argo.GuardianSerializer
+
+# Browser testing
+config :hound, driver: "phantomjs"

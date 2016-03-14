@@ -39,6 +39,7 @@ defmodule Argo.Mixfile do
      {:cowboy, "~> 1.0"},
      {:guardian, "~> 0.10.0"},
      {:credo, "~> 0.3", only: [:dev, :test]},
+     {:hound, "~> 0.8", only: [:dev, :test]},
      {:faker, "~> 0.5", only: :test}]
   end
 
