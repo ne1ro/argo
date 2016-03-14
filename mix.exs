@@ -38,7 +38,8 @@ defmodule Argo.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:guardian, "~> 0.10.0"},
-     {:credo, "~> 0.3", only: [:dev, :test]}]
+     {:credo, "~> 0.3", only: [:dev, :test]},
+     {:faker, "~> 0.5", only: :test}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
