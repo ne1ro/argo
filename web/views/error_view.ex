@@ -1,4 +1,8 @@
 defmodule Argo.ErrorView do
+  @moduledoc """
+    Errors renderer
+  """
+
   use Argo.Web, :view
 
   def render("404.html", _assigns) do

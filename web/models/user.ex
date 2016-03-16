@@ -1,4 +1,8 @@
 defmodule Argo.User do
+  @moduledoc """
+    Admin user model
+  """
+
   use Argo.Web, :model
 
   schema "users" do

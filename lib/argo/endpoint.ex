@@ -1,4 +1,8 @@
 defmodule Argo.Endpoint do
+  @moduledoc """
+    Application endpoint
+  """
+
   use Phoenix.Endpoint, otp_app: :argo
 
   socket "/socket", Argo.UserSocket

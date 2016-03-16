@@ -1,5 +1,10 @@
 defmodule Argo do
+  @moduledoc """
+    Argo web app
+  """
+
   use Application
+  alias Argo.Endpoint
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
@@ -18,13 +23,14 @@ defmodule Argo do
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Argo.Supervisor]
-    Supervisor.start_link(children, opts)
+    Supervisor.start_link children, opts
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    Argo.Endpoint.config_change(changed, removed)
+    Endpoint.config_change changed, removed
+
     :ok
   end
 end

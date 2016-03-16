@@ -1,4 +1,8 @@
 defmodule Argo.Router do
+  @moduledoc """
+    Application router
+  """
+
   use Argo.Web, :router
 
   pipeline :browser_session do

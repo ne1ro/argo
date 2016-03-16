@@ -1,4 +1,8 @@
 defmodule Argo.PageController do
+  @moduledoc """
+    Application controller
+  """
+
   use Argo.Web, :controller
 
   def index(conn, _params) do

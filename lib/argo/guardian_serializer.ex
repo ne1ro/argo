@@ -1,4 +1,8 @@
 defmodule Argo.GuardianSerializer do
+  @moduledoc """
+    Application guardian serializer
+  """
+
   @behaviour Guardian.Serializer
 
   alias Argo.Repo
