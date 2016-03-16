@@ -10,6 +10,7 @@ defmodule Argo.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases,
+     test_coverage: [tool: Coverex.Task],
      deps: deps]
   end
 
@@ -40,7 +41,8 @@ defmodule Argo.Mixfile do
      {:guardian, "~> 0.10.0"},
      {:credo, "~> 0.3", only: [:dev, :test]},
      {:hound, "~> 0.8", only: [:dev, :test]},
-     {:faker, "~> 0.5", only: :test}]
+     {:faker, "~> 0.5", only: :test},
+     {:coverex, "~> 1.4.7", only: :test}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
