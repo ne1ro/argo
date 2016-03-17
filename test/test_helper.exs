@@ -1,4 +1,5 @@
 Application.ensure_all_started :hound
+Faker.start
 ExUnit.start
 
 Mix.Task.run "ecto.create", ~w(-r Argo.Repo --quiet)

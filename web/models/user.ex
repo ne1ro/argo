@@ -15,6 +15,9 @@ defmodule Argo.User do
     timestamps
   end
 
+  @min_password_length 8
+  @min_text_length 3
+
   @required_fields ~w(name admin email password password_confirmation)
   @optional_fields ~w()
 
@@ -27,5 +30,11 @@ defmodule Argo.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> unique_constraint(:email)
+    |> validate_length(:password, min: @min_password_length)
+    |> validate_confirmation(:password)
+    |> validate_length(:name, min: @min_text_length)
+    |> validate_length(:email, min: @min_text_length)
+    |> validate_format(:email, ~r/^.+@.+$/)
   end
 end
