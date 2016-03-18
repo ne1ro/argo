@@ -4,6 +4,7 @@ defmodule Argo.User do
   """
 
   use Argo.Web, :model
+  import Comeonin.Bcrypt, only: [hashpwsalt: 1]
 
   schema "users" do
     field :name, :string
@@ -36,5 +37,16 @@ defmodule Argo.User do
     |> validate_length(:name, min: @min_text_length)
     |> validate_length(:email, min: @min_text_length)
     |> validate_format(:email, ~r/^.+@.+$/)
+    |> hash_pwd
+  end
+
+  defp hash_pwd(cs) do
+    pwd = get_field cs, :password
+
+    if is_binary(pwd) do
+      put_change cs, :password, Comeonin.Bcrypt.hashpwsalt(pwd)
+    else
+      cs
+    end
   end
 end
