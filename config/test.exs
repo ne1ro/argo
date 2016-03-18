@@ -17,3 +17,7 @@ config :argo, Argo.Repo,
   database: "argo_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Reduce number of encryption rounds
+config :comeonin, :bcrypt_log_rounds, 4
+config :comeonin, :pbkdf2_rounds, 1

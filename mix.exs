@@ -20,7 +20,7 @@ defmodule Argo.Mixfile do
   def application do
     [mod: {Argo, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,6 +39,7 @@ defmodule Argo.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:guardian, "~> 0.10.0"},
+     {:comeonin, "~> 2.1"},
      {:credo, "~> 0.3", only: [:dev, :test]},
      {:hound, "~> 0.8", only: [:dev, :test]},
      {:faker, "~> 0.5", only: :test},
