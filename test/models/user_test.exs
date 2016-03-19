@@ -49,13 +49,4 @@ defmodule Argo.UserTest do
 
     assert { :email,  "is invalid"} in errors_on(%User{}, attrs)
   end
-
-  test "password should be hashed" do
-    password = '123456abc'
-    changeset = User.changeset %User{}, %{@valid_attrs | password: password}
-    IO.inspect changeset
-    IO.inspect get_field(changeset, :password)
-
-    assert Comeonin.Bcrypt.checkpw(password, get_field(changeset, :password))
-  end
 end

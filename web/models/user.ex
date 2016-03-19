@@ -11,7 +11,7 @@ defmodule Argo.User do
     field :admin, :boolean, default: false
     field :email, :string
     field :password, :string
-    field :password_confirmation, :string
+    field :password_confirmation, :string, virtual: true
 
     timestamps
   end
@@ -41,12 +41,10 @@ defmodule Argo.User do
   end
 
   defp hash_pwd(cs) do
-    pwd = get_field cs, :password
-
-    if is_binary(pwd) do
-      put_change cs, :password, Comeonin.Bcrypt.hashpwsalt(pwd)
-    else
-      cs
+    case cs do
+      %Ecto.Changeset{valid?: true, changes: %{password: password}} ->
+        put_change cs, :password, Comeonin.Bcrypt.hashpwsalt(password)
+      _ -> cs
     end
   end
 end
