@@ -28,8 +28,9 @@ defmodule Argo.Router do
     pipe_through [:browser, :browser_session] # Use the default browser stack
 
     get "/", PageController, :index
-    get "/users/sign_in", SessionController, :sign_in
-    delete "/users/log_out", SessionController, :log_out
+    get "/users/sign_in", SessionController, :new
+    post "/users/sign_in", SessionController, :create
+    delete "/users/log_out", SessionController, :destroy
 
     get "/users/:id", UserController, :show
     patch "/users/:id", UserController, :update
