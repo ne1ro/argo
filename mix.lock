@@ -9,6 +9,7 @@
   "credo": {:hex, :credo, "0.3.10"},
   "db_connection": {:hex, :db_connection, "0.2.5"},
   "decimal": {:hex, :decimal, "1.1.1"},
+  "dotenv": {:hex, :dotenv, "2.0.0"},
   "earmark": {:hex, :earmark, "0.2.1"},
   "ecto": {:hex, :ecto, "1.1.5"},
   "eiconv": {:git, "https://github.com/zotonic/eiconv.git", "644fb5e7bd6640fbd073f4d28957914ea979aea0", []},

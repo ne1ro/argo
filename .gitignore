@@ -27,3 +27,5 @@ cover
 
 web/static/vendor
 bower_components
+
+.env

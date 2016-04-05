@@ -19,8 +19,7 @@ defmodule Argo.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Argo, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin]]
+     applications: app_list(Mix.env)]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,6 +39,7 @@ defmodule Argo.Mixfile do
      {:guardian, "~> 0.10.0"},
      {:comeonin, "~> 2.1"},
      {:mailman, "~> 0.1.0"},
+     {:dotenv, "~> 2.0.0"},
      {:eiconv, github: "zotonic/eiconv"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:credo, "~> 0.3", only: [:dev, :test]},
@@ -58,4 +58,9 @@ defmodule Argo.Mixfile do
     ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
      "ecto.reset": ["ecto.drop", "ecto.setup"]]
   end
+
+  defp app_list(:dev), do: [:dotenv | app_list]
+  defp app_list(_), do: app_list
+  defp app_list, do: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
+                      :phoenix_ecto, :postgrex, :comeonin]
 end
