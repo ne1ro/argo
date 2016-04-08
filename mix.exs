@@ -40,6 +40,7 @@ defmodule Argo.Mixfile do
      {:comeonin, "~> 2.1"},
      {:mailman, "~> 0.1.0"},
      {:dotenv, "~> 2.0.0"},
+     {:arc, "~> 0.5.1"},
      {:eiconv, github: "zotonic/eiconv"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:credo, "~> 0.3", only: [:dev, :test]},
