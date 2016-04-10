@@ -34,7 +34,7 @@ config :guardian, Guardian,
   issuer: "Argo",
   ttl: { 30, :days },
   verify_issuer: true, # optional
-  secret_key: "example",
+  secret_key: "ijaosidjfpAKJSFH123", # TODO: change
   serializer: Argo.GuardianSerializer
 
 # Browser testing

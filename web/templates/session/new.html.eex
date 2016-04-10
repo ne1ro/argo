@@ -1,4 +1,6 @@
-<%= form_tag session_path(@conn, :create), method: "post" do %>
+<h1 style="text-align: center">Вход на сайт</h1>
+
+<%= form_tag session_path(@conn, :create), method: "post", id: "sign_in_form" do %>
   <div class='control-group'>
     <label class='control-label' for='email-input'>Email</label>
     <input class='form-control' type='email' name='email' value='<%= @conn.params["email"] %>' required/>
