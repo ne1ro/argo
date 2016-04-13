@@ -12,10 +12,12 @@
   </head>
 
   <body>
-    <%= render "alerts.html", assigns %>
+    <%= render "nav.html", assigns %>
 
     <main role="main" class="container">
+      <%= render "alerts.html", assigns %>
       <%= render @view_module, @view_template, assigns %>
+      <%= render "footer.html" %>
     </main>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

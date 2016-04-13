@@ -1,4 +1,4 @@
-defmodule Argo.UsersSignInTest do
+defmodule Argo.UsersSignOutTest do
   use ExUnit.Case
   use Hound.Helpers
 
