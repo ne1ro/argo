@@ -19,7 +19,8 @@ defmodule Argo.SessionController do
   end
 
   def destroy(conn, _params) do
-    Guardian.Plug.sign_out(conn)
+    conn
+      |> Guardian.Plug.sign_out
       |> put_flash(:info, "Выход из сайта выполнен")
       |> redirect(to: "/")
   end
