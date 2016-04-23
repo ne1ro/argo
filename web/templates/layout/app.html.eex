@@ -14,10 +14,10 @@
   <body>
     <%= render "nav.html", assigns %>
 
-    <main role="main" class="container">
+    <main role="main" class="container" style="margin-top: 50px">
       <%= render "alerts.html", assigns %>
       <%= render @view_module, @view_template, assigns %>
-      <%= render "footer.html" %>
+      <%= render "footer.html", assigns %>
     </main>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
