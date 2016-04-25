@@ -6,9 +6,11 @@
           <%= link "Арго", to: page_path(@conn, :index) %>
         </li>
 
-        <li>
-          <%= link "Выйти", to: session_path(@conn, :destroy), id: "sign_out" %>
-        </li>
+        <%= if current_user(@conn) do %>
+          <li>
+            <%= link "Выйти", to: session_path(@conn, :destroy), id: "sign_out" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
