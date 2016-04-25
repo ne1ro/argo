@@ -1,3 +1,5 @@
+require IEx
+
 defmodule Argo.User do
   @moduledoc """
     Admin user model
@@ -10,7 +12,8 @@ defmodule Argo.User do
     field :name, :string
     field :admin, :boolean, default: false
     field :email, :string
-    field :password, :string
+    field :encrypted_password, :string
+    field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
 
     timestamps
@@ -20,7 +23,7 @@ defmodule Argo.User do
   @min_text_length 3
 
   @required_fields ~w(name admin email password password_confirmation)
-  @optional_fields ~w()
+  @optional_fields ~w(encrypted_password)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -29,6 +32,7 @@ defmodule Argo.User do
   with no validation performed.
   """
   def changeset(model, params \\ :empty) do
+    IEx.pry
     model
     |> cast(params, @required_fields, @optional_fields)
     |> unique_constraint(:email)
@@ -43,7 +47,7 @@ defmodule Argo.User do
   defp hash_pwd(cs) do
     case cs do
       %Ecto.Changeset{valid?: true, changes: %{password: password}} ->
-        put_change cs, :password, Comeonin.Bcrypt.hashpwsalt(password)
+        put_change cs, :encrypted_password, Comeonin.Bcrypt.hashpwsalt(password)
       _ -> cs
     end
   end

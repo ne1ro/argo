@@ -7,13 +7,13 @@
 #
 pass = System.get_env "ADMIN_PASSWORD"
 
-Argo.Repo.insert! %Argo.User{
+Argo.User.changeset(%Argo.User{}, %{
   name: "admin",
   email: System.get_env("ADMIN_EMAIL"),
   admin: true,
   password: pass,
   password_confirmation: pass
-}
+}) |> Argo.Repo.insert_or_update!
 
 #
 # We recommend using the bang functions (`insert!`, `update!`

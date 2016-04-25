@@ -6,8 +6,7 @@ defmodule Argo.Repo.Migrations.CreateUser do
       add :name, :string, null: false
       add :admin, :boolean, default: false
       add :email, :string, null: false
-      add :password, :string, null: false
-      add :password_confirmation, :string
+      add :encrypted_password, :string, null: false
 
       timestamps
     end

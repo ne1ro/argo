@@ -49,4 +49,11 @@ defmodule Argo.UserTest do
 
     assert { :email,  "is invalid"} in errors_on(%User{}, attrs)
   end
+
+  test "password should be hashed" do
+    pwd = User.changeset(%User{}, @valid_attrs) |>
+      get_field(:encrypted_password)
+
+    refute pwd == @valid_attrs[:password]
+  end
 end
