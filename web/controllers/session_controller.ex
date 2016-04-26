@@ -1,3 +1,5 @@
+require IEx
+
 defmodule Argo.SessionController do
   @moduledoc """
     User session controller
@@ -6,15 +8,14 @@ defmodule Argo.SessionController do
   use Argo.Web, :controller
 
   alias Argo.User
+  alias Argo.Repo
 
-  def new(conn, _params) do
-    render conn, "new.html"
-  end
+  def new(conn, _params), do: render conn, "new.html"
 
-  def create(conn, _params = %{}) do
+  def create(conn, params = %{}) do
     conn
       |> put_flash(:info, "Вход на сайт выполнен успешно!")
-      |> Guardian.Plug.sign_in(verify_user(_params), :token)
+      |> Guardian.Plug.sign_in(verify_user(params), :token)
       |> redirect(to: "/")
   end
 
@@ -25,7 +26,7 @@ defmodule Argo.SessionController do
       |> redirect(to: "/")
   end
 
-  defp verify_user(params) do
-    params
+  defp verify_user(%{"email" => email}) do
+    User |> Repo.get_by(email: email)
   end
 end
