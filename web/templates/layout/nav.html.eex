@@ -8,7 +8,7 @@
 
         <%= if logged_in?(@conn) do %>
           <li>
-            <%= link "Выйти", to: session_path(@conn, :destroy), id: "sign_out" %>
+            <%= link "Выйти", to: session_path(@conn, :destroy), id: "sign_out", method: :delete %>
           </li>
         <% end %>
       </ul>

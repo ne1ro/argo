@@ -12,10 +12,10 @@ defmodule Argo.SessionController do
 
   def new(conn, _params), do: render conn, "new.html"
 
-  def create(conn, params = %{}) do
+  def create(conn, _params = %{}) do
     conn
+      |> Guardian.Plug.sign_in(verify_user(_params), :csrf)
       |> put_flash(:info, "Вход на сайт выполнен успешно!")
-      |> Guardian.Plug.sign_in(verify_user(params), :token)
       |> redirect(to: "/")
   end
 
