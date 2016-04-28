@@ -1,4 +1,4 @@
-%{"arc": {:hex, :arc, "0.5.1"},
+%{"arc": {:hex, :arc, "0.5.2"},
   "base64url": {:hex, :base64url, "0.0.1"},
   "bunt": {:hex, :bunt, "0.1.5"},
   "certifi": {:hex, :certifi, "0.4.0"},
