@@ -1,21 +1,45 @@
-const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: __dirname,
-  entry: './app/assets/javascripts/app/index.js',
+  devtool: 'source-map',
+  entry: {
+    app: ['./web/static/css/app.scss', './web/static/js/app.js'],
+  },
   output: {
-    path: path.join(__dirname, 'app', 'assets', 'javascripts'),
-    filename: 'bundle.js',
-    publicPath: '/assets',
+    path: './priv/static',
+    filename: 'js/app.js',
   },
   resolve: {
-    extensions: ['', '.js'],
-    modulesDirectories: ['node_modules', 'bower_components'],
+    modulesDirectories: ['node_modules',
+      __dirname + '/web/static/js'],
+    alias: {
+      phoenix_html:
+        __dirname + '/deps/phoenix_html/web/static/js/phoenix_html.js',
+      phoenix:
+        __dirname + '/deps/phoenix/web/static/js/phoenix.js',
+    },
   },
   module: {
     loaders: [
-        { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-        { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
+      {
+        test: /\.scss$/,
+        // loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
+        loader: ExtractTextPlugin.extract(
+          'style',
+          'css!sass?includePaths[]=' + __dirname +  '/node_modules'
+        ),
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css'),
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000',
+      },
     ],
   },
+  plugins: [
+    new ExtractTextPlugin('css/app.css'),
+  ],
 };

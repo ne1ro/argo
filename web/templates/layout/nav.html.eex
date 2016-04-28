@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link "Арго", to: page_path(@conn, :index) %>
+        </li>
+
+        <%= if logged_in?(@conn) do %>
+          <li>
+            <%= link "Выйти", to: session_path(@conn, :destroy), id: "sign_out", method: :delete %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
